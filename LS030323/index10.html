@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+
+<html>
+  <body>
+    <script>
+      var abStr = prompt("Вводите логин и Пароль");
+      var abArray = abStr.split(" ");
+      var username = parseInt(abArray[0]);
+      var password = parseInt(abArray[1]);
+
+      if (username === "user" && password === "qwerty") {
+        alert("Authentication completed");
+      } else {
+        alert("Invalid login or password");
+      }
+    </script>
+  </body>
+</html>

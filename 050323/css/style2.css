@@ -1,0 +1,33 @@
+* {
+  margin: 0px;
+}
+
+.parent {
+  display: flex;
+
+  flex-wrap: wrap;
+}
+
+.parent div {
+  border: 2px black solid;
+
+  width: 33%;
+}
+
+.bg-blue {
+  background-color: rgb(90, 31, 51);
+  color: white;
+  width: 100%;
+  padding-left: 10px;
+}
+
+.container {
+  width: 90%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.news {
+  width: 75%;
+  padding-left: 20px;
+}

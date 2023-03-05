@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+
+<html>
+  <body>
+    <script>
+      let minutes = prompt("Введите количество минут:");
+
+      let hours = Math.floor(minutes / 60);
+      let remainingMinutes = minutes % 60;
+
+      if (hours > 0) {
+        alert(`${hours} HOURS and ${remainingMinutes} MINUTES`);
+      } else {
+        alert(`${remainingMinutes} MINUTES`);
+      }
+    </script>
+  </body>
+</html>

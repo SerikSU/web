@@ -1,0 +1,101 @@
+* {
+  margin: 0px;
+}
+
+.bg-blue {
+  background-color: rgb(55, 25, 177);
+  color: white;
+  width: 100%;
+  padding-left: 10px;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  height: 50px;
+}
+.news {
+  width: 15%;
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+.news p {
+  width: 51%;
+}
+.finder {
+  width: 85%;
+  /* width: 75%; */
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 20px;
+}
+
+.bg {
+  background-color: rgb(90, 31, 51);
+  color: rgb(134, 210, 221);
+  width: 100%;
+  padding-left: 10px;
+}
+
+.parent {
+  width: 100%-12px;
+  border: 1px black solid;
+  display: flex;
+  margin: 5px 5px 10px;
+}
+
+.friends div {
+  width: 33%;
+  /* width: 23%; */
+}
+.friends {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.friends img {
+  border-radius: 50%;
+  /* height: 100px; */
+  height: 50px;
+}
+
+.parent {
+  background-color: gainsboro;
+}
+
+.profile_photo {
+  border: 2px solid black;
+  width: 20%;
+}
+#avatar {
+  padding: 5px;
+  width: 97%;
+}
+
+.blok4 {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  border: 2px solid black;
+}
+
+.blok44 {
+  width: 50%;
+  display: flex;
+
+  /* flex-direction: column; */
+}
+
+.tt {
+  border-radius: 1px;
+  width: 60px;
+  height: 60px;
+}
+
+.tt2 {
+  /* margin: 200px; */
+  padding: 100px;
+}

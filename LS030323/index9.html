@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html>
+  <body>
+    <script>
+      let amount = prompt("INSERT YOUR AMOUNT IN KZT:");
+
+      // Display the currency options and ask for the user's choice
+      let choice = prompt(`Choose a currency:
+1 - CONVERT TO USD
+2 - CONVERT TO EUR
+3 - CONVERT TO GBP`);
+
+      // Convert the amount to the selected currency based on the exchange rate
+      if (choice === "1") {
+        let usd = amount / 380;
+        alert(`${amount} KZT = ${usd.toFixed(2)} USD`);
+      } else if (choice === "2") {
+        let eur = amount / 430;
+        alert(`${amount} KZT = ${eur.toFixed(2)} EUR`);
+      } else if (choice === "3") {
+        let gbp = amount / 480;
+        alert(`${amount} KZT = ${gbp.toFixed(2)} GBP`);
+      } else {
+        alert("Invalid choice.");
+      }
+    </script>
+  </body>
+</html>

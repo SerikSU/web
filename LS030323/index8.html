@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<html>
+  <body>
+    <script>
+      const Price = 120;
+      const cashbackThreshold = 4000;
+      const cashbackPercentage = 10;
+
+      const numberOfWhiskeys = prompt("Введите количество вискасов:");
+
+      const totalPrice = numberOfWhiskeys * Price;
+
+      let finalPrice;
+      if (totalPrice > cashbackThreshold) {
+        const cashbackAmount = totalPrice * (cashbackPercentage / 100);
+        finalPrice = totalPrice - cashbackAmount;
+      } else {
+        finalPrice = totalPrice;
+      }
+
+      alert(finalPrice, `KZT`);
+    </script>
+  </body>
+</html>

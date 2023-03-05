@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+<html>
+  <body>
+    <script>
+      const USD_EXCHANGE_RATE = 380;
+
+      let amountInTenge = parseInt(prompt("Введите сумму в тенге: "));
+      let amountInUSD = amountInTenge / USD_EXCHANGE_RATE;
+
+      let dollars = Math.floor(amountInUSD);
+      let cents = Math.round((amountInUSD - dollars) * 100);
+
+      if (cents == 0) {
+        alert(dollars + " USD");
+      } else {
+        alert(dollars + " dollars and " + cents + " cents");
+      }
+    </script>
+  </body>
+</html>
