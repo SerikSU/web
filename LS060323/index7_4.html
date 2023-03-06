@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html>
+  <body>
+    <script>
+      const n = parseInt(prompt("Введите количество элементов:"));
+
+      let numbers = prompt().split(" ");
+      let ans = "";
+
+      console.log(numbers);
+
+      const arr = [];
+
+      for (let i = 0; i < numbers; i++) {
+        // const element = parseFloat(prompt(`Введите элемент ${i + 1}:`));
+        numbers.push(element);
+      }
+
+      let result = 1;
+      for (let i = 0; i < numbers.length; i++) {
+        if (numbers[i] != 0) {
+          result *= numbers[i];
+        }
+      }
+
+      console.log(`Произведение всех ненулевых элементов равно: ${result}`);
+    </script>
+  </body>
+</html>

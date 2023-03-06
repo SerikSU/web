@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+
+<html>
+  <body>
+    <script>
+      // Define the cars database
+      const cars = [
+        { name: "Toyota", year: 2015, volume: 2.2, price: 12000000 },
+        { name: "Mercedes", year: 2018, volume: 3.8, price: 70000000 },
+        { name: "Toyota", year: 2013, volume: 2.0, price: 7000000 },
+        { name: "BMW", year: 2011, volume: 3.0, price: 11000000 },
+        { name: "Lexus", year: 2017, volume: 5.7, price: 60000000 },
+      ];
+
+      // Helper function to format a car object into a string
+      function formatCar(car) {
+        return `${car.name} - ${car.year} - ${car.volume} liters - ${car.price} KZT\n`;
+      }
+
+      // Helper function to filter cars by name
+      function filterByName(name) {
+        return cars.filter((car) => car.name === name);
+      }
+
+      // Helper function to filter cars by year range
+      function filterByYear(startYear, endYear) {
+        return cars.filter(
+          (car) => car.year >= startYear && car.year <= endYear
+        );
+      }
+
+      // Helper function to filter cars by engine volume range
+      function filterByVolume(startVolume, endVolume) {
+        return cars.filter(
+          (car) => car.volume >= startVolume && car.volume <= endVolume
+        );
+      }
+
+      // Helper function to filter cars by price range
+      function filterByPrice(startPrice, endPrice) {
+        return cars.filter(
+          (car) => car.price >= startPrice && car.price <= endPrice
+        );
+      }
+
+      // Main program loop
+      while (true) {
+        const choice = parseInt(
+          prompt(
+            "Insert [1] TO SEARCH BY NAME\nInsert [2] TO SEARCH BY YEAR\nInsert [3] TO SEARCH BY ENGINE VOLUME\nInsert [4] TO SEARCH BY PRICE\nInsert [5] TO EXIT"
+          )
+        );
+
+        if (choice === 1) {
+          const name = prompt("INSERT NAME OF CAR:");
+          const matchingCars = filterByName(name);
+
+          if (matchingCars.length === 0) {
+            alert("No cars found with that name");
+          } else {
+            let output = "";
+            for (const car of matchingCars) {
+              output += formatCar(car);
+            }
+            alert(output);
+          }
+        } else if (choice === 2) {
+          const startYear = parseInt(prompt("INSERT YEAR START FROM:"));
+          const endYear = parseInt(prompt("INSERT YEAR ENDS FROM:"));
+          const matchingCars = filterByYear(startYear, endYear);
+
+          if (matchingCars.length === 0) {
+            alert("No cars found in that year range");
+          } else {
+            let output = "";
+            for (const car of matchingCars) {
+              output += formatCar(car);
+            }
+            alert(output);
+          }
+        } else if (choice === 3) {
+          const startVolume = parseFloat(
+            prompt("INSERT ENGINE VOLUME START FROM:")
+          );
+          const endVolume = parseFloat(
+            prompt("INSERT ENGINE VOLUME ENDS FROM:")
+          );
+          const matchingCars = filterByVolume(startVolume, endVolume);
+
+          if (matchingCars.length === 0) {
+            alert("No cars found in that engine volume range");
+          } else {
+            let output = "";
+            for (const car of matchingCars) {
+              output += formatCar(car);
+            }
+            alert(output);
+          }
+        } else if (choice === 4) {
+          const startPrice = parseInt(prompt("INSERT PRICE START FROM:"));
+          const endPrice = parseInt(prompt("INSERT PRICE ENDS FROM:"));
+          const matchingCars = filterByPrice(startPrice, endPrice);
+
+          if (matchingCars.length === 0) {
+            alert("No cars found with this price");
+          } else {
+            let output = "";
+            for (const car of matchingCars) {
+              output += formatCar(car);
+            }
+            alert(output);
+          }
+        } else if (choice === 5) {
+          break;
+        }
+      }
+    </script>
+  </body>
+</html>

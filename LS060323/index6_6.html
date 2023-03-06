@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html>
+  <body>
+    <script>
+      //
+
+      let books = [
+        {
+          name: "The Great Gatsby",
+          author: "F. Scott Fitzgerald",
+          isbn: "978-0743273565",
+          price: 9.99,
+        },
+        {
+          name: "To Kill a Mockingbird",
+          author: "Harper Lee",
+          isbn: "978-0446310789",
+          price: 8.99,
+        },
+        {
+          name: "1984",
+          author: "George Orwell",
+          isbn: "978-0451524935",
+          price: 7.99,
+        },
+        {
+          name: "Harry Potter and the Chamber of Secrets",
+          author: "Joanne Rowling",
+          isbn: "978-0141439518",
+          price: 6.99,
+        },
+        {
+          name: "The Catcher in the Rye",
+          author: "J.D. Salinger",
+          isbn: "978-0316769488",
+          price: 5.99,
+        },
+        {
+          name: "Harry Potter and the Philosopher's Stone",
+          author: "Joanne Rowling",
+          isbn: "978-0060850524",
+          price: 4.99,
+        },
+      ];
+
+      let name = prompt();
+      let ans = "";
+
+      //   console.log(numbers);
+      console.log(books);
+
+      var authenticated = false;
+      for (var i = 0; i < books.length; i++) {
+        if (name === books[i]["author"]) {
+          authenticated = true;
+          break;
+        }
+      }
+
+      if (authenticated) {
+        alert("Welcome, you are authenticated");
+      } else {
+        alert("User not found");
+      }
+    </script>
+  </body>
+</html>

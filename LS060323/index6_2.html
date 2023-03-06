@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<html>
+  <body>
+    <script>
+      let n = prompt("Введите количество элементов:");
+
+      let numbers = prompt().split(" ");
+      let ans = "";
+
+      let max1 = 0;
+
+      for (let x of numbers) {
+        if (max1 < parseInt(x)) {
+          max1 = parseInt(x);
+        }
+      }
+      console.log(max1);
+
+      console.log(numbers);
+    </script>
+  </body>
+</html>

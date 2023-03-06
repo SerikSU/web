@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html>
+  <body>
+    <script>
+      //   let numbers = [];
+
+      let numbers = prompt().split(" ");
+      let ans = "";
+
+      console.log(numbers);
+
+      while (true) {
+        let input = prompt("Введите число (или 0 для выхода):");
+        let number = Number(input);
+
+        if (number == 0) {
+          break;
+        }
+
+        numbers.push(number);
+      }
+
+      let positiveNumbers = numbers.filter(function (number) {
+        return number > 0;
+      });
+
+      // for (let i = 0; i < numbers.length; i++) {
+      //   ans += numbers[i] + " ";
+      // }
+
+      // console.log(ans);
+
+      console.log("Положительные числа:", positiveNumbers);
+    </script>
+  </body>
+</html>
