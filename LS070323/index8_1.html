@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <title>Form events</title>
+
+    <style>
+      .invalid {
+        border-color: red;
+      }
+
+      .error {
+        height: 25px;
+        color: red;
+      }
+
+      form {
+        text-align: center;
+        margin-top: 50px;
+      }
+      .errorInput {
+        border-color: red;
+      }
+    </style>
+  </head>
+
+  <body>
+    <form id="myform">
+      LOGIN:
+      <input style="margin-left: 40px" type="text" name="login" id="login" />
+
+      <div id="loginError" class="error"></div>
+
+      PASSWORD: <input type="password" name="password" id="pass" />
+
+      <div id="passwordError" class="error"></div>
+
+      <button
+        style="color: rgb(242, 242, 247); background-color: #4276a5"
+        type="button"
+        onclick="checkUser()"
+      >
+        SIGN IN
+      </button>
+    </form>
+
+    <script>
+      // возмем уже существующий массив объектов с пользователями
+
+      let usersArray = [
+        { name: "Ilyas", login: "ileke", password: "ileke123" },
+
+        { name: "Aibek", login: "aieke", password: "aieke123" },
+
+        { name: "Eldar", login: "eleke", password: "eleke123" },
+      ];
+
+      let logField = myform.elements.login; // logField = элемент ввода логина
+
+      let passField = myform.elements.password; // passField = элемент ввода пароля
+      // let rr = myform.elements.event.value
+
+      login.classList.remove("errorInput");
+      pass.classList.remove("errorInput");
+      //вызывается при нажатии на кнопку
+
+      function checkUser() {
+        if (logField.value == "") {
+          // loginError.innerHTML = "Please enter login";
+          login.classList.add("errorInput");
+        }
+        // если логин не ввели
+
+        if (passField.value == "") {
+          // passwordError.innerHTML = "Please enter password";
+          pass.classList.add("errorInput");
+        }
+        // если пароль не ввели
+
+        if (logField.value != "" && passField.value != "") {
+          login.classList.remove("errorInput");
+          pass.classList.remove("errorInput");
+          let authenticated = false;
+
+          for (let u of usersArray) {
+            // если введенные данные есть в нашем массиве
+
+            if (logField.value == u.login && passField.value == u.password) {
+              alert("Welcome: " + u.name); // выводим Welcome + имя пользователя
+
+              authenticated = true;
+
+              break;
+            }
+          }
+
+          // если введенных данных не в нашем массиве
+
+          if (!authenticated) alert("No user with such login and password");
+
+          // очищаем элементы ввода
+
+          logField.value = "";
+
+          passField.value = "";
+        }
+      }
+
+      // при фокусировке на элемент ввода нужно убирать сообщение об ошибке
+
+      function checkFields() {
+        if (event.target == logField) loginError.innerHTML = "";
+
+        if (event.target == passField) passwordError.innerHTML = "";
+      }
+
+      // реагируем на события фокусировки
+
+      logField.onfocus = checkFields;
+
+      passField.onfocus = checkFields;
+    </script>
+  </body>
+</html>

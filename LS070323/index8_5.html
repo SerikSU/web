@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #gallery {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .thumbnail {
+        margin: 10px;
+        width: 200px;
+        height: 150px;
+        background-size: cover;
+        background-position: center;
+        cursor: pointer;
+      }
+
+      #main-image {
+        width: 1200px;
+        height: 500px;
+        background-size: cover;
+        background-position: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="main-image"
+      style="background-image: url('img/Безымянный.png')"
+    ></div>
+
+    <div id="gallery">
+      <div
+        class="thumbnail"
+        style="background-image: url('img/Безымянный.png')"
+        onclick="changeMainImage('img/Безымянный.png')"
+      ></div>
+      <div
+        class="thumbnail"
+        style="background-image: url('img/Безымянный3.png')"
+        onclick="changeMainImage('img/Безымянный3.png')"
+      ></div>
+      <div
+        class="thumbnail"
+        style="background-image: url('img/human.png')"
+        onclick="changeMainImage('img/human.png')"
+      ></div>
+      <div
+        class="thumbnail"
+        style="background-image: url('img/image2.jpg')"
+        onclick="changeMainImage('img/image2.jpg')"
+      ></div>
+      <div
+        class="thumbnail"
+        style="background-image: url('img/images.jpeg')"
+        onclick="changeMainImage('img/images.jpeg')"
+      ></div>
+    </div>
+
+    <!-- <div
+      id="main-image"
+      style="background-image: url('img/Безымянный.png')"
+    ></div> -->
+  </body>
+  <script>
+    // store the list of pictures in an array
+    var pictures = [
+      "img/Безымянный.png",
+      "img/Безымянный3.png",
+      "img/Безымянный.png",
+      "img/Безымянный.png",
+      "img/Безымянный.png",
+    ];
+
+    // function to change the main image
+    function changeMainImage(imageUrl) {
+      var mainImage = document.getElementById("main-image");
+      mainImage.style.backgroundImage = "url('" + imageUrl + "')";
+    }
+  </script>
+</html>

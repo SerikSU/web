@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .span {
+        color: black;
+      }
+    </style>
+  </head>
+  <body class="display: flex; justify-content: center">
+    <div style="display: flex; justify-content: space-between; width: 800px">
+      <div>
+        <p>Введите сумму:</p>
+        <input type="text" id="summ" />
+        <select id="sel1" onclick="inpute()">
+          <option>KZT</option>
+          <option>USD</option>
+          <option>EUR</option>
+        </select>
+      </div>
+
+      <!--  -->
+      <div>
+        <p>KZT (tenge)</p>
+        <div style="background-color: teal; width: 180px; height: 20px">
+          <span class="span" id="kzt"></span>
+        </div>
+      </div>
+
+      <div>
+        <p>USD (dollar)</p>
+        <div style="background-color: teal; width: 180px; height: 20px">
+          <span class="span" id="usd"></span>
+        </div>
+      </div>
+
+      <div>
+        <p>EUR (eur)</p>
+        <div style="background-color: teal; width: 180px; height: 20px">
+          <span class="span" id="eur"></span>
+        </div>
+      </div>
+      <!--  -->
+    </div>
+
+    <script>
+      function inpute() {
+        var summ = document.getElementById("summ").value;
+        var sel1 = document.getElementById("sel1").value;
+        var kzt = document.getElementById("kzt");
+        var usd = document.getElementById("usd");
+        var eur = document.getElementById("eur");
+        if (sel1 == "KZT") {
+          kzt.innerHTML = "-";
+          usd.innerHTML = summ / 450;
+          eur.innerHTML = summ / 470;
+        } else if (sel1 == "USD") {
+          kzt.innerHTML = summ * 450;
+          usd.innerHTML = "-";
+          eur.innerHTML = summ * 470;
+        } else {
+          kzt.innerHTML = summ * 470;
+          usd.innerHTML = summ * 1.13;
+          eur.innerHTML = "-";
+        }
+      }
+    </script>
+  </body>
+</html>

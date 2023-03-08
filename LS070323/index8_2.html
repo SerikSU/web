@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html>
+  <body>
+    <div>
+      <button style="width: 100px" id="increment">+</button>
+      <span id="counter">0</span>
+      <button style="width: 100px" id="decrement">-</button>
+    </div>
+
+    <script>
+      const counterEl = document.getElementById("counter");
+      const incrementBtn = document.getElementById("increment");
+      const decrementBtn = document.getElementById("decrement");
+      let counter = 0;
+
+      function updateCounter() {
+        counterEl.textContent = counter;
+      }
+
+      function incrementCounter() {
+        counter++;
+        updateCounter();
+      }
+
+      function decrementCounter() {
+        counter--;
+        updateCounter();
+      }
+
+      incrementBtn.addEventListener("click", incrementCounter);
+      decrementBtn.addEventListener("click", decrementCounter);
+    </script>
+  </body>
+</html>
