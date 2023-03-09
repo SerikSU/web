@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .block1 {
+        width: 1200px;
+        background: #b8b6b6;
+        padding: 5px;
+        padding-right: 20px;
+        border: solid 1px black;
+        float: left;
+      }
+
+      form {
+        text-align: center;
+        margin-top: 50px;
+      }
+      .errorInput {
+        border-color: red;
+      }
+    </style>
+  </head>
+  <body style="color: #f5f1f1">
+    <form id="myform"></form>
+    <div class="block1">
+      <div>
+        <p style="color: red">Email:</p>
+        <div>
+          <!-- 1*1 -->
+          <!-- <input style="margin-left: 0px" type="text" name="card1" /> -->
+          <input type="email" id="login" name="login" required /><br />
+          <!-- <input style="type="text"; name="card1" /> -->
+        </div>
+      </div>
+      <div>
+        <p style="color: red">Password:</p>
+        <div>
+          <!-- 1*2 -->
+          <!-- <input style="margin-left: 0px" type="text" name="card1" /> -->
+          <input
+            type="password"
+            id="pass"
+            name="pass"
+            minlength="6"
+            required
+          /><br />
+        </div>
+      </div>
+      <div>
+        <p style="color: red">Retyre Password:</p>
+        <div>
+          <!-- 1*3 -->
+          <!-- <input style="margin-left: 0px" type="text" name="card1" /> -->
+          <input
+            type="password"
+            id="confirm-password"
+            name="confirm-password"
+            required
+          /><br />
+        </div>
+      </div>
+      <div style="margin-top: 20px">
+        <!-- <button>
+          <p>REGISTER</p>
+        </button> -->
+        <button
+          style="color: rgb(242, 242, 247); background-color: #4276a5"
+          type="button"
+          onclick="checkUser()"
+        >
+          REGISTER
+        </button>
+      </div>
+    </div>
+</form>
+
+    <!-- ********** -->
+    <script>
+      // возмем уже существующий массив объектов с пользователями
+
+      let usersArray = [
+        { name: "Ilyas", login: "ileke", password: "ileke123" },
+
+        { name: "Aibek", login: "aieke", password: "aieke123" },
+
+        { name: "Eldar", login: "eleke", password: "eleke123" },
+      ];
+
+      let logField = myform.elements.login; // logField = элемент ввода логина
+
+      let passField = myform.elements.password; // passField = элемент ввода пароля
+      // let rr = myform.elements.event.value
+
+      login.classList.remove("errorInput");
+      pass.classList.remove("errorInput");
+      //вызывается при нажатии на кнопку
+
+      function checkUser() {
+        if (logField.value == "") {
+          loginError.innerHTML = "Please enter login";
+          //   login.classList.add("errorInput");
+        }
+        // если логин не ввели
+
+        if (passField.value == "") {
+          passwordError.innerHTML = "Please enter password";
+          //   pass.classList.add("errorInput");
+        }
+        // если пароль не ввели
+
+        if (logField.value != "" && passField.value != "") {
+          login.classList.remove("errorInput");
+          pass.classList.remove("errorInput");
+          let authenticated = false;
+
+          for (let u of usersArray) {
+            // если введенные данные есть в нашем массиве
+
+            if (logField.value == u.login && passField.value == u.password) {
+              alert("Welcome: " + u.name); // выводим Welcome + имя пользователя
+
+              authenticated = true;
+
+              break;
+            }
+          }
+
+          // если введенных данных не в нашем массиве
+
+          if (!authenticated) alert("No user with such login and password");
+
+          // очищаем элементы ввода
+
+          logField.value = "";
+
+          passField.value = "";
+        }
+      }
+
+      // при фокусировке на элемент ввода нужно убирать сообщение об ошибке
+
+      function checkFields() {
+        if (event.target == logField) loginError.innerHTML = "";
+
+        if (event.target == passField) passwordError.innerHTML = "";
+      }
+
+      // реагируем на события фокусировки
+
+      logField.onfocus = checkFields;
+
+      passField.onfocus = checkFields;
+    </script>
+  </body>
+</html>
