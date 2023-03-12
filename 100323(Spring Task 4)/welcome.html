@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>TWITTER</title>
+    <link rel="stylesheet" type="text/css" href="task 9.1.css" />
+  </head>
+
+  <body>
+    <div class="blue container">
+      <div class="twitter">
+        <h2 style="font-size: 20px">TWITTER</h2>
+      </div>
+      <div class="button">
+        <button>Tweets</button>&nbsp
+        <button id="login_button">Login</button>&nbsp
+        <button>Logout</button>&nbsp
+      </div>
+    </div>
+
+    <div class="main">
+      <div class="empty"></div>
+      <div class="data">
+        <div>
+          WELCOME
+          <h1 id="welcome_fullname1"></h1>
+        </div>
+        <div>
+          <p>EMAIL:</p>
+          <p id="welcome_email"></p>
+        </div>
+        <div>
+          <p>FULL NAME:</p>
+          <p id="welcome_fullname"></p>
+        </div>
+        <div>
+          <p>COUNTRY:</p>
+          <p id="welcome_country"></p>
+        </div>
+        <div>
+          <p>BIRTHADATE:</p>
+          <p id="welcome_birth_date"></p>
+        </div>
+      </div>
+      <div class="empty"></div>
+    </div>
+    <script>
+      let json = localStorage.getItem("mama");
+      let data = JSON.parse(json);
+      welcome_email.innerHTML = data.email;
+      welcome_fullname.innerHTML = data.fullname;
+      welcome_fullname1.innerHTML = data.fullname;
+
+      welcome_country.innerHTML = data.country;
+      welcome_birth_date.innerHTML = data.birth_date;
+
+      login_button.innerHTML = data.fullname;
+    </script>
+  </body>
+</html>
